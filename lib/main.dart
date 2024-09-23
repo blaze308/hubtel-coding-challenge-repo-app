@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -47,7 +49,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen>
       child: Scaffold(
         // TabBar for navigating between History and Transaction Summary
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
+          preferredSize: const Size.fromHeight(50),
           child: TabBar(
             controller: _tabController,
             indicator: BoxDecoration(
@@ -101,11 +103,11 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen>
 
             // Date label for transactions
             Padding(
-              padding: EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                       horizontal: 20,
                       vertical: 10), // Padding inside the date container
                   decoration: BoxDecoration(
@@ -199,15 +201,15 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen>
 
         // Floating Action Button at the bottom of the screen
         floatingActionButton: Padding(
-          padding: EdgeInsets.only(bottom: 30),
+          padding: const EdgeInsets.only(bottom: 30),
           child: FloatingActionButton.extended(
             onPressed: () {},
             icon: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white, // White background for the plus icon
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.add, // Black plus sign
                 color: Color(0xFF01C7B1), // Plus icon color
               ),
@@ -218,7 +220,7 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen>
                 color: Colors.white, // Text color
               ),
             ),
-            backgroundColor: Color(0xFF01C7B1), // Button background color
+            backgroundColor: const Color(0xFF01C7B1), // Button background color
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation
@@ -278,20 +280,23 @@ class _TransactionHistoryScreenState extends State<TransactionHistoryScreen>
                       isSuccess
                           ? Icons.check_circle
                           : Icons.cancel, // Show success or failure icon
-                      color: isSuccess ? Color(0xFF70E083) : Color(0xFF991B33),
+                      color: isSuccess
+                          ? const Color(0xFF70E083)
+                          : const Color(0xFF991B33),
                     ),
                     label: Text(
                       status, // Status text (Successful/Failed)
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
-                        color:
-                            isSuccess ? Color(0xFF70E083) : Color(0xFF991B33),
+                        color: isSuccess
+                            ? const Color(0xFF70E083)
+                            : const Color(0xFF991B33),
                       ),
                     ),
                     backgroundColor: isSuccess
-                        ? Color(0xFFDBF7E0)
-                        : Color(
+                        ? const Color(0xFFDBF7E0)
+                        : const Color(
                             0xFFFDB0AC), // Background color for success or failure
                     elevation: 0, // No shadow for the chip
                     side: BorderSide.none, // No border for the chip
